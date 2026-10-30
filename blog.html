@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e0a'/><text x='5' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff66'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>blog-log · Portfolio</title>
+<meta name="description" content="Dispatches: posts, talks, release notes and essays.">
+</head>
+<body data-page="blog">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="top"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="gitcmd">
+      <code class="g">&gt;_ $ git log --graph --pretty=format:'%C(cyan)%h%Creset %C(green)%ad%Creset %s' --date=iso</code>
+      <span class="sm"><span class="badge c">[HEAD -&gt; main]</span> <span class="w"><span class="live-dot"></span>SYNCED</span></span>
+    </div>
+
+    <div class="blog-layout">
+      <div>
+        <section class="pane" style="margin-bottom:1.5rem;padding:1rem" aria-label="Search dispatches">
+          <div class="between xs"><span class="m">BUFFER: /dev/stdout/dispatches</span><span class="c" id="regex">[REGEX: READY]</span></div>
+          <label class="grep"><span class="g b">$ grep -i</span><input id="grep" type="search" placeholder="query tags or commits... (e.g. rust, ebpf, envoy)" aria-label="Search posts"><span class="m" aria-hidden="true">⌕</span></label>
+          <div class="flags" id="tagflags" style="margin:.75rem 0 0"></div>
+        </section>
+
+        <div class="post-list" id="posts" aria-live="polite"></div>
+
+        <div class="pane pager" style="padding:.75rem 1rem">
+          <button class="btn" id="prev">← newer</button>
+          <span class="w b" id="pageinfo"></span>
+          <button class="btn" id="next" style="color:var(--green)">older →</button>
+        </div>
+      </div>
+
+      <aside class="blog-side">
+        <section class="pane">
+          <div class="side-title"><span class="w">⛁ Dispatch Telemetry</span><span class="g">[ONLINE]</span></div>
+          <div class="inset"><table class="kv"><tbody id="tele"></tbody></table>
+            <div class="between xs m" style="margin-top:.6rem"><span>STAGE COMPLETION</span><span class="w">100%</span></div>
+            <div class="bar"><i style="width:100%"></i></div></div>
+        </section>
+        <section class="pane">
+          <div class="side-title"><span class="w">⌗ Indexed Tag Cloud</span><span class="m" id="tagcount"></span></div>
+          <div id="tagcloud" style="line-height:2"></div>
+        </section>
+        <section class="pane recent">
+          <div class="side-title"><span class="w">◷ Recent Dispatch Trees</span><span class="m">rev-list -n4</span></div>
+          <div id="recent"></div>
+        </section>
+        <section class="xs" style="padding:0 .25rem">
+          <div class="g"><span class="live-dot"></span>SYSTEM CONTEXT BUFFER</div>
+          <div class="m">HOST: github-pages-edge</div>
+          <div class="m">TLS: enforced (https)</div>
+          <div class="g">LOG_FLUSH: OK (0 errors)</div>
+        </section>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer id="foot"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

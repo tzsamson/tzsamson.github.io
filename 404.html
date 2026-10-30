@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e0a'/><text x='5' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff66'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>404 · not found</title>
+</head>
+<body data-page="404">
+<header id="top"></header>
+<main id="main">
+  <div class="wrap notfound">
+    <h1>404</h1>
+    <p class="cmd"><span class="p">$</span> cd <span id="path"></span></p>
+    <p class="a">zsh: no such file or directory</p>
+    <p style="margin-top:1.5rem"><a class="btn ghost" href="index.html">cd ~/whoami</a></p>
+  </div>
+</main>
+<footer id="foot"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("path").textContent = location.pathname;</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e0a'/><text x='5' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff66'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>projects · Portfolio</title>
+<meta name="description" content="Open-source projects and repositories.">
+</head>
+<body data-page="projects">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="top"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="between">
+      <h1 class="cmd" style="margin:0;font-weight:400"><span class="p" id="tree-cmd"></span> tree -L 2 --sort=stars ./repositories/ <span class="cursor" aria-hidden="true"></span></h1>
+      <span class="sm"><span class="badge c" id="found"></span> <span class="m hide-sm">inode: 9024198</span></span>
+    </div>
+    <div class="between">
+      <div class="flags" id="flags" role="toolbar" aria-label="Filter projects"></div>
+      <span class="xs m" id="synced"><span class="live-dot"></span>INDEX_SYNCED_OK</span>
+    </div>
+
+    <div class="proj-grid" id="proj-grid"></div>
+
+    <section class="shell" id="shell" aria-label="Interactive terminal" style="background:var(--pane)">
+      <div class="between sm" style="border-bottom:1px solid var(--line);padding-bottom:.5rem;margin-bottom:.75rem">
+        <span><span class="g">SYS_EXEC:</span> <span class="m">Run command directly on directory tree</span></span>
+        <span class="c">env: WASM_VIRTUAL_SH</span>
+      </div>
+      <div class="sm" style="margin-bottom:.75rem"><span class="w">Type</span> <span class="g">help</span>, <span class="g">ls</span>, <span class="g">stats</span>, or <span class="g">clear</span></div>
+      <div class="shell-out" aria-live="polite"></div>
+      <div class="shell-line inset" style="font-size:.875rem">
+        <label for="shell-in" id="shell-label"></label>
+        <input id="shell-in" autocomplete="off" spellcheck="false" placeholder="run command (e.g. ls -la, stats)...">
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer id="foot"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

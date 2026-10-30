@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e0a'/><text x='5' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff66'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>new-dispatch · Portfolio</title>
+<meta name="description" content="Draft a new blog post and export it for the site.">
+<meta name="robots" content="noindex">
+</head>
+<body data-page="dispatch">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="top"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="dispatch-head">
+      <div>
+        <div class="row" style="flex-wrap:wrap"><h1 class="g-glow" style="font-size:1.05rem">▣ dispatch.sh</h1><span class="m">|</span><span class="sm"><span class="c">TARGET:</span> <span class="w" id="target"></span></span></div>
+        <div class="badge g" style="margin-top:.5rem"><span class="live-dot"></span>ENGINE: static · config.js / markdown export</div>
+      </div>
+      <div class="inset sm" style="max-width:520px"><span class="c">⇄</span> <span class="m">Local drafting tool — nothing is uploaded.</span> <span class="g">Export → commit → GitHub Pages redeploys in ~1 min.</span></div>
+    </div>
+
+    <div class="editor-layout">
+      <div class="stack">
+        <section class="pane" aria-label="Front matter">
+          <div class="pane-head"><span class="g">--- YAML FRONTMATTER ---</span><span class="w">config.yaml</span></div>
+          <label class="field"><span><span>post_title</span><span class="m">required [str]</span></span><input id="f-title" placeholder="Zero-Copy Buffer Serialization in Async Kernels"></label>
+          <label class="field"><span><span>category_type</span><span class="c">[enum]</span></span>
+            <select id="f-type"><option value="POST">&gt; Blog Post / Tech Devlog</option><option value="EVENT">&gt; Event / Talk</option><option value="UPDATE">&gt; Release / Update</option><option value="THOUGHTS">&gt; Essay / Thoughts</option></select></label>
+          <label class="field"><span>publish_date</span><input id="f-date" type="datetime-local"></label>
+          <label class="field"><span><span>summary</span><span class="m">[str]</span></span><textarea id="f-summary" rows="3" placeholder="One or two lines shown under the title."></textarea></label>
+          <div class="field"><span><span>tags: [list]</span><span class="m">enter/comma</span></span><div class="tagbox" id="tagbox"></div></div>
+          <div class="inset sm" style="margin-top:1.1rem">
+            <div class="between"><span class="m up">Archetype Hook</span><span class="g">READY</span></div>
+            <div style="margin-top:.4rem">Output File: <span class="w" id="out-file"></span></div>
+            <div>Destination: <span class="c">posts: [ … ] in assets/js/config.js</span></div>
+          </div>
+        </section>
+
+        <section class="pane" aria-label="Export">
+          <div class="between xs"><span class="m up"><span class="live-dot c"></span>Buffer</span><span class="m" id="words"></span></div>
+          <div class="action-grid">
+            <button class="btn" id="act-copy-md"><span class="m">[ + ]</span> <span class="g">Copy .md</span></button>
+            <button class="btn" id="act-download"><span class="m">[ ↓ ]</span> <span class="c">Download</span></button>
+            <button class="btn" id="act-clear"><span class="m">[ x ]</span> Discard</button>
+            <button class="btn primary" id="act-copy-config">⇪ Copy config entry</button>
+          </div>
+          <p class="xs m" style="margin-top:.75rem;line-height:1.6">Paste the config entry at the top of <span class="g">posts</span> in <span class="w">assets/js/config.js</span>, commit, push. Drafts autosave in this browser.</p>
+        </section>
+      </div>
+
+      <section class="pane editor" aria-label="Editor">
+        <div class="editor-bar">
+          <span><span class="g b">GNU nano 7.2</span> <span class="m">::</span> <span class="w">~/posts/draft.md</span> <span class="badge c" id="modified">[Modified]</span></span>
+          <div class="seg" id="seg" role="group" aria-label="View mode">
+            <button class="on" data-mode="split">split view</button><button data-mode="editor-only">editor only</button><button data-mode="render-only">render only</button>
+          </div>
+        </div>
+        <div class="editor-panes split" id="panes">
+          <div class="src">
+            <div class="sm" style="margin-bottom:.5rem"><span class="m">BUFFER: $ nano draft.md</span> &nbsp; <span class="g" id="lncol"></span></div>
+            <label class="sr-only" for="f-body">Post body (Markdown)</label>
+            <textarea id="f-body" spellcheck="true" placeholder="# Heading&#10;&#10;Write in **Markdown**. Supports headings, lists, > quotes, `code`, ```fenced blocks``` and [links](https://example.com)."></textarea>
+          </div>
+          <div class="render" id="preview" aria-label="Rendered preview"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer id="foot"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

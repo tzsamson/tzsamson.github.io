@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0e0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a0e0a'/><text x='5' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%2300ff66'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>whoami · Portfolio</title>
+<meta name="description" content="Personal portfolio — systems & infrastructure engineering.">
+</head>
+<body data-page="home">
+<a class="sr-only" href="#main">Skip to content</a>
+<header id="top"></header>
+
+<main id="main">
+  <div class="wrap">
+    <div class="deploybar">
+      <span><span class="live-dot"></span><span class="g">DEPLOY::SUCCESS</span> <span class="w">Built from</span> <span class="c">main</span> <span class="m">via GitHub Pages</span></span>
+      <span class="hide-sm"><span class="w">branch::</span><span class="c">gh-pages</span> &nbsp; <span class="g">status::200 OK</span></span>
+    </div>
+
+    <section class="window" style="margin-top:1rem">
+      <div class="window-bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div class="tabs">
+          <a class="on" href="index.html"><span class="m">[1]</span> ~/whoami</a>
+          <a href="projects.html">[2] ~/projects</a>
+          <a href="blog.html">[3] ~/blog</a>
+          <a href="dispatch.html">[4] ~/dispatch</a>
+        </div>
+        <span class="right m hide-sm">⚙ tty::x86_64 <span class="g">utf-8</span></span>
+      </div>
+
+      <div class="window-body">
+        <p class="cmd"><span class="p" data-ps></span> ./motd.sh --banner --fast <span class="m sm">PID: 1042</span></p>
+        <div class="banner">
+          <h1 class="banner-name" id="banner-name"></h1>
+          <div class="banner-rule" aria-hidden="true">==================================================================================================================================</div>
+          <div class="banner-lines" id="banner-lines"></div>
+        </div>
+
+        <div class="grid-home">
+          <section class="pane" aria-label="System profile">
+            <div class="pane-head"><span class="g">$ neofetch --stdout</span><span class="c">[ok: 2ms]</span></div>
+            <div class="neofetch">
+              <div class="avatar" id="avatar"></div>
+              <div>
+                <div class="fetch-host" id="fetch-host"></div>
+                <table class="kv"><tbody id="fetch-kv"></tbody></table>
+              </div>
+            </div>
+            <div class="gauge sub" id="gauge"></div>
+          </section>
+
+          <section class="pane" aria-label="Bio">
+            <div class="pane-head"><span><span class="g">$ cat ./bio.txt</span> <span class="m">--pipe --ansi</span></span><span class="w">1.8 KB</span></div>
+            <div class="bio" id="bio" style="margin-top:1.25rem"></div>
+            <div class="focus-grid" id="focus"></div>
+            <div class="oss" id="oss"></div>
+          </section>
+        </div>
+
+        <div class="section">
+          <div class="between" style="margin-bottom:.75rem">
+            <p class="cmd" style="margin:0"><span class="p" data-ps></span> ls -la ./skills/ --tree --depth=2</p>
+            <span class="m sm hide-sm">drwxr-xr-x 1 staff 4096</span>
+          </div>
+          <div class="skills" id="skills"></div>
+        </div>
+
+        <section class="pane section" aria-label="Recent activity">
+          <div class="pane-head"><span class="g">$ git log --graph --oneline -n 3 <span class="c">[origin/main]</span></span><span class="m">HEAD -&gt; main</span></div>
+          <div class="gitlog" id="gitlog"></div>
+        </section>
+
+        <section class="shell" id="shell" aria-label="Interactive terminal">
+          <div class="shell-out" aria-live="polite"></div>
+          <div class="shell-line">
+            <label for="shell-in" id="shell-label"></label>
+            <input id="shell-in" autocomplete="off" spellcheck="false" placeholder="type a command or click suggestions below...">
+            <span class="cursor" aria-hidden="true"></span>
+          </div>
+          <div class="quick"><span class="m">Quick run:</span>
+            <button class="chip-btn" data-run="help">[help]</button>
+            <button class="chip-btn" data-run="cat resume.pdf">[cat resume.pdf]</button>
+            <button class="chip-btn" data-run="git status">[git status]</button>
+            <button class="chip-btn" data-run="curl /contact">[curl /contact]</button>
+            <button class="chip-btn muted" data-run="clear">[clear]</button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer id="foot"></footer>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
